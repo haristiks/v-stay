@@ -2,26 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
+
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  font-size: 16px !important;
+  width: 100% !important;
+}
+
+@layer components {
+  .rc-table-custom table {
+    width: 100%;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  li.js-li {
+    display: inline-block;
+    padding: 7px;
+    font-size: 18px;
+  }
+
+  li.js-li.active {
+    color: white;
+    font-weight: 700;
+    background: purple;
+    border-radius: 6px;
+  }
+
+  ul.js-ul {
+    margin-top: 12px;
+    text-align: right;
+  }
+
+  .pure-modal .panel-heading {
+    @apply bg-purple-600!important;
+  }
+
+  p.product-title {
+    margin-top: 0px !important;
+  }
 }
